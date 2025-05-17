@@ -1228,6 +1228,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/vite@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "@tailwindcss/vite@npm:4.1.7"
+  dependencies:
+    "@tailwindcss/node": "npm:4.1.7"
+    "@tailwindcss/oxide": "npm:4.1.7"
+    tailwindcss: "npm:4.1.7"
+  peerDependencies:
+    vite: ^5.2.0 || ^6
+  checksum: 10c0/8733e509a6834385998a952cc276b17038356794f657ac727e01a1abd40e1ca4a4b92cdc716127640ba5348fe8be6df7b3f04a948edcf684899312eed0046b68
+  languageName: node
+  linkType: hard
+
 "@trysound/sax@npm:0.2.0":
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
@@ -5173,7 +5186,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.1.7, tailwindcss@npm:^4.1.6":
+"tailwindcss@npm:4.1.7, tailwindcss@npm:^4.1.7":
   version: 4.1.7
   resolution: "tailwindcss@npm:4.1.7"
   checksum: 10c0/abe56f990bd4b03e0b332a2a39063e7f0f7359e6591282ba4e56ac18e5c58baca6b271072221253fcab7d9534d50f384f13fc41b66b06e0e427ef3f0ab2035bf
@@ -5715,11 +5728,12 @@ __metadata:
     "@iconify-json/mdi": "npm:^1.2.3"
     "@tailwindcss/postcss": "npm:^4.1.6"
     "@tailwindcss/typography": "npm:^0.5.16"
+    "@tailwindcss/vite": "npm:^4.1.7"
     astro: "npm:^5.7.13"
     astro-icon: "npm:^1.1.5"
     autoprefixer: "npm:^10.4.21"
     postcss: "npm:^8.5.3"
-    tailwindcss: "npm:^4.1.6"
+    tailwindcss: "npm:^4.1.7"
   languageName: unknown
   linkType: soft
 
