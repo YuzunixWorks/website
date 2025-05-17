@@ -1,3 +1,8 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +10,33 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Yuzunix</title>
+		<link href="/src/styles/globals.css" rel="stylesheet">
 	</head>
 	<body>
+		<div class="fixed inset-0 -z-10 bg-[#fefdf8] overflow-hidden">
+			<div
+				class="absolute w-[30vw] h-[30vw] top-[5%] left-[5%] rounded-full bg-[#fde68a] opacity-25 blur-[100px] transition duration-1000"
+			>
+			</div>
+			<div
+				class="absolute w-[28vw] h-[28vw] bottom-[8%] right-[8%] rounded-full bg-[#c4e4c2] opacity-35 blur-[100px] transition duration-1000"
+			>
+			</div>
+			<div
+				class="absolute w-[26vw] h-[26vw] top-[12%] right-[15%] rounded-full bg-[#bae6fd] opacity-25 blur-[100px] transition duration-1000"
+			>
+			</div>
+			<div
+				class="absolute w-[20vw] h-[20vw] top-[50%] left-[35%] rounded-full bg-[#d9f99d] opacity-30 blur-[100px] transition duration-1000"
+			>
+			</div>
+		</div>
+
+		<Header />
+
 		<slot />
+
+		<Footer />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

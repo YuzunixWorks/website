@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+    <section class="max-w-4xl mx-auto px-6 py-16 text-gray-800">
+        <h1 class="text-4xl text-center font-bold py-8 mb-3">
+            About Yuzunix Works
+        </h1>
+
+        <p class="text-lg leading-relaxed mb-8">
+            Yuzunix Works
+            は、創造と技術の力で幻想的かつ実用的なツールやシステム、コンテンツを生み出すクリエイティブスタジオです。
+            想像力とエンジニアリングの融合により、未来をかたちにしていくことを目指しています。
+        </p>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">メンバー</h2>
+            <div class="gap-6">
+                <div
+                    class="relative bg-white rounded-xl shadow p-4 flex items-center gap-6 w-full"
+                >
+                    <img
+                        src="/icons/namakemono_san.png"
+                        alt="namakemono_san"
+                        class="w-20 h-20 rounded-full object-cover"
+                    />
+
+                    <div class="flex-1 pr-24">
+                        <p class="text-sm text-gray-500">
+                            Founder / Developer / Designer / Engineer
+                        </p>
+                        <h3 class="text-xl font-bold">
+                            なまけもの (namakemono-san)
+                        </h3>
+                        <p class="text-sm text-gray-700 mt-1">
+                            プログラミングとゲームを愛する学生
+                        </p>
+                    </div>
+
+                    <div
+                        class="absolute bottom-4 right-4 flex gap-4 text-xl text-gray-500"
+                    >
+                        <a
+                            href="https://github.com/namakemono-san"
+                            class="hover:text-black"
+                            aria-label="GitHub"
+                        >
+                            <Icon name="fa-brands:github" />
+                        </a>
+                        <a
+                            href="https://discord.com/users/641555810325102593"
+                            class="hover:text-indigo-500"
+                            aria-label="Discord"
+                        >
+                            <Icon name="fa-brands:discord" />
+                        </a>
+                        <a
+                            href="https://x.com/nmkmn_moe"
+                            class="hover:text-blue-400"
+                            aria-label="X"
+                        >
+                            <Icon name="fa-brands:twitter" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">技術スタック</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-4 shadow">
+                    <h3 class="text-lg font-semibold mb-2">Languages</h3>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >TypeScript</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >Python</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >Rust</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >Go</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >Java</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-gray-100 text-gray-800 rounded"
+                            >C#</span
+                        >
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow">
+                    <h3 class="text-lg font-semibold mb-2">
+                        Frameworks & Libraries
+                    </h3>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >Astro</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >Next.js</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >React</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >Vue</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >Tailwind CSS</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >MUI</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-blue-100 text-blue-800 rounded"
+                            >Axum</span
+                        >
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow">
+                    <h3 class="text-lg font-semibold mb-2">
+                        Tools & Platforms
+                    </h3>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >Docker</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >Kubernetes</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >GitHub Actions</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >MySQL</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >PostgreSQL</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >MongoDB</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-green-100 text-green-800 rounded"
+                            >Redis</span
+                        >
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow">
+                    <h3 class="text-lg font-semibold mb-2">Game / Creative</h3>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded"
+                            >Minecraft Plugin</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded"
+                            >Minecraft Datapack</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded"
+                            >Unity</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded"
+                            >BepInEx (Modding)</span
+                        >
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded"
+                            >Harmony (Modding)</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-2">お問い合わせ</h2>
+            <p>
+                コラボレーションやご相談は
+                <a href="mailto:contact@yuzunix.dev" class="text-blue-500 hover:underline"
+                    >contact@yuzunix.dev</a
+                >
+                からお気軽にご連絡ください。
+            </p>
+        </div>
+    </section>
+</Layout>

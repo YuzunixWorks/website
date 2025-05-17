@@ -1,0 +1,11 @@
+---
+import Layout from "./Layout.astro";
+const { title } = Astro.props;
+---
+
+<Layout>
+    <article class="prose prose-neutral max-w-4xl mx-auto px-6 py-16 prose-headings:mt-4 prose-headings:mb-1 prose-hr:my-4 prose-p:mt-2 prose-p:mb-1 prose-ul:mt-0">
+        <h1 class="text-4xl font-bold mb-3">{title}</h1>
+        <slot />
+    </article>
+</Layout>

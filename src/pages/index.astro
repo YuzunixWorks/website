@@ -1,11 +1,86 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<section
+		id="hero"
+		class="h-screen w-full flex flex-col justify-center items-center text-center text-primary-text relative overflow-hidden"
+	>
+		<h1 class="text-6xl font-bold text-center">
+			<span
+				class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+			>
+				Yuzunix
+			</span>
+			<span class="text-gray-800">Works</span>
+		</h1>
+
+		<p
+			id="slogan"
+			class="text-2xl leading-6 text-gray-600 h-14 whitespace-nowrap overflow-hidden relative"
+		>
+			<span id="slogan-text"></span><span class="blinker">|</span>
+		</p>
+	</section>
+
+	<script>
+		const jp = "創造と技術で、未来をかたちにする。";
+		const en = "Shaping the future through creativity and technology.";
+		const target = document.getElementById("slogan-text");
+
+		let isEnglish = false;
+		let index = 0;
+		let text = jp;
+		let typing = true;
+
+		function typeWriter() {
+			if (target == null) return;
+
+			if (typing) {
+				if (index <= text.length) {
+					target.textContent = text.slice(0, index++);
+					setTimeout(typeWriter, 60);
+				} else {
+					typing = false;
+					setTimeout(typeWriter, 2000);
+				}
+			} else {
+				if (index >= 0) {
+					target.textContent = text.slice(0, index--);
+					setTimeout(typeWriter, 40);
+				} else {
+					target.textContent = "";
+					setTimeout(() => {
+						typing = true;
+						isEnglish = !isEnglish;
+						text = isEnglish ? en : jp;
+						index = 0;
+						typeWriter();
+					}, 150);
+				}
+			}
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			typeWriter();
+		});
+	</script>
+	<style>
+		.blinker {
+			display: inline-block;
+			width: 1px;
+			height: 1.2em;
+			margin-left: 2px;
+			background-color: #444;
+			animation: blink 1s step-start infinite;
+			vertical-align: bottom;
+		}
+
+		@keyframes blink {
+			50% {
+				opacity: 0;
+			}
+		}
+	</style>
 </Layout>

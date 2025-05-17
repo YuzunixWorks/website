@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <section
+        id="hero"
+        class="h-screen w-full flex flex-col justify-center items-center text-center text-primary-text relative overflow-hidden"
+    >
+        <div class="text-center">
+            <h2 class="text-6xl font-bold bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent mb-2">
+                404 Not Found
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+                お探しのページは存在しないか、移動された可能性があります。
+            </p>
+            <a
+                href="/"
+                class="px-6 py-4 bg-[#f6e05e] text-gray-800 font-medium rounded hover:bg-[#f9d445] transition"
+            >
+                ホームに戻る
+            </a>
+        </div>
+    </section>
+</Layout>

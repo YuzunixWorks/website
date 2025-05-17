@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+type Project = {
+    service: string;
+    name: string;
+    description: string;
+    links: { label: string; url: string; color?: string }[];
+};
+
+const projectList: Project[] = [
+    {
+        service: "Alcaris Network",
+        name: "natsume-frontend",
+        description: "Vite-powered React frontend for Natsume, a service within the Alcaris Network.",
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/AlcarisMinecraftServer/natsume-frontend",
+                color: "gray",
+            },
+        ],
+    },
+    {
+        service: "Alcaris Network",
+        name: "natsume-backend",
+        description: "Backend API for Natsume, a service within the Alcaris Network.",
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/AlcarisMinecraftServer/natsume-backend",
+                color: "gray",
+            },
+        ],
+    },
+    {
+        service: "Myon Bot",
+        name: "myon-bot-core",
+        description: "There is no description.",
+        links: [],
+    },
+    {
+        service: "Myon Bot",
+        name: "myon-bot-frontend",
+        description: "There is no description.",
+        links: [],
+    },
+    {
+        service: "Myon Bot",
+        name: "myon-bot-backend",
+        description: "There is no description.",
+        links: [],
+    },
+    {
+        service: "Myon Bot",
+        name: "myon-bot-image-api",
+        description: "There is no description.",
+        links: [],
+    },
+    {
+        service: "Murasame",
+        name: "murasame",
+        description: "murasame: a private osu! server, invitation-only for exclusive access and enhanced gameplay.",
+        links: [],
+    },
+    {
+        service: "Murasame",
+        name: "koharu",
+        description: "koharu: A front-end developed for Murasame.",
+        links: [],
+    },
+    {
+        service: "Murasame",
+        name: "lena",
+        description: "lena: Internal tools for administrators for murasame",
+        links: [],
+    },
+    {
+        service: "Yuzunix Works",
+        name: "website",
+        description: "Official website of Yuzunix Works. Astro's website introducing the studio's activities and services.",
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/YuzunixWorks/website",
+                color: "gray",
+            },
+        ],
+    },
+];
+---
+
+<Layout>
+    <section class="max-w-4xl min-h-screen mx-auto px-6 py-16 text-gray-800">
+        <h1 class="text-4xl text-center font-bold py-8 mb-3">Projects</h1>
+        <p class="text-lg text-center leading-relaxed mb-12">
+            Yuzunix Works による開発・設計プロジェクトの一覧です。
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            {
+                projectList.map((project) => (
+                    <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between">
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">
+                                {project.service}
+                            </p>
+                            <h2 class="text-lg font-bold">{project.name}</h2>
+                            <p class="text-sm text-gray-700 mt-1 leading-relaxed">
+                                {project.description}
+                            </p>
+                        </div>
+                        <div class="mt-1 flex gap-2 text-sm">
+                            {project.links?.map((link) => (
+                                <a
+                                    href={link.url}
+                                    target="_blank"
+                                    class={`px-4 py-1.5 ${
+                                        link.color === "gray"
+                                            ? "bg-gray-800 text-white hover:bg-gray-900"
+                                            : "bg-blue-500 text-white hover:bg-blue-600"
+                                    } rounded font-medium transition`}
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
