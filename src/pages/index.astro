@@ -3,84 +3,454 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<section
-		id="hero"
-		class="h-screen w-full flex flex-col justify-center items-center text-center text-primary-text relative overflow-hidden"
-	>
-		<h1 class="text-6xl font-bold text-center">
-			<span
-				class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
-			>
-				Yuzunix
-			</span>
-			<span class="text-gray-800">Works</span>
-		</h1>
+    <section
+        id="hero"
+        class="relative isolate flex flex-col items-start justify-center h-screen w-full overflow-hidden px-6 md:px-24 lg:px-36"
+    >
+        <canvas
+            id="starfield"
+            class="absolute inset-0 -z-10 h-full w-full pointer-events-none"
+        ></canvas>
 
-		<p
-			id="slogan"
-			class="text-2xl leading-6 text-gray-600 h-14 whitespace-nowrap overflow-hidden relative"
-		>
-			<span id="slogan-text"></span><span class="blinker">|</span>
-		</p>
-	</section>
+        <div
+            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#fef9c3]/20 to-[#f0abfc]/10"
+        >
+        </div>
 
-	<script>
-		const jp = "創造と技術で、未来をかたちにする。";
-		const en = "Shaping the future through creativity and technology.";
-		const target = document.getElementById("slogan-text");
+        <p
+            class="mb-2 text-sm md:text-base tracking-widest font-medium uppercase text-gray-400"
+        >
+            CREATIVE TECH STUDIO
+        </p>
 
-		let isEnglish = false;
-		let index = 0;
-		let text = jp;
-		let typing = true;
+        <h1
+            class="leading-tight font-extrabold text-gray-900 text-5xl sm:text-7xl md:text-8xl"
+        >
+            <span
+                class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                >Yuzunix</span
+            >
+            <span class="inline-block ml-2">Works</span>
+        </h1>
 
-		function typeWriter() {
-			if (target == null) return;
+        <p
+            id="slogan"
+            class="relative mt-6 h-12 overflow-hidden text-xl sm:text-2xl lg:text-3xl text-gray-600"
+        >
+            <span id="slogan-text"></span><span class="blinker">|</span>
+        </p>
 
-			if (typing) {
-				if (index <= text.length) {
-					target.textContent = text.slice(0, index++);
-					setTimeout(typeWriter, 60);
-				} else {
-					typing = false;
-					setTimeout(typeWriter, 2000);
-				}
-			} else {
-				if (index >= 0) {
-					target.textContent = text.slice(0, index--);
-					setTimeout(typeWriter, 40);
-				} else {
-					target.textContent = "";
-					setTimeout(() => {
-						typing = true;
-						isEnglish = !isEnglish;
-						text = isEnglish ? en : jp;
-						index = 0;
-						typeWriter();
-					}, 150);
-				}
-			}
-		}
+        <a
+            href="#works"
+            class="mt-10 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gray-900 shadow-lg shadow-yellow-300/40 transition hover:scale-[1.03] hover:shadow-amber-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+        >
+            Explore Works
+            <svg
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </a>
+    </section>
 
-		window.addEventListener("DOMContentLoaded", () => {
-			typeWriter();
-		});
-	</script>
-	<style>
-		.blinker {
-			display: inline-block;
-			width: 1px;
-			height: 1.2em;
-			margin-left: 2px;
-			background-color: #444;
-			animation: blink 1s step-start infinite;
-			vertical-align: bottom;
-		}
+    <section
+        id="about"
+        class="reveal scroll-mt-24 min-h-screen flex flex-col justify-center px-6 md:px-24 lg:px-36"
+    >
+        <h2 class="mb-10 text-6xl sm:text-7xl font-extrabold tracking-tight">
+            <span
+                class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                >Make the Future Together</span
+            >
+        </h2>
 
-		@keyframes blink {
-			50% {
-				opacity: 0;
-			}
-		}
-	</style>
+        <p class="max-w-6xl text-xl sm:text-2xl leading-relaxed text-gray-700">
+            私たちは、<ruby><strong>創造力</strong><rt>そうぞうりょく</rt></ruby
+            >と
+            <ruby><strong>技術力</strong><rt>ぎじゅつりょく</rt></ruby>で
+            <ruby><strong>幻想</strong><rt>げんそう</rt></ruby>と
+            <ruby><strong>日常</strong><rt>にちじょう</rt></ruby
+            >が交差する体験を編み出します。<br />
+
+            好奇心のままに面白いものを探し続け、 世界をもっと<strong
+                >便利で、楽しく、豊かに</strong
+            >できると信じています。<br />
+
+            まだ見ぬ<ruby><strong>景色</strong><rt>けしき</rt></ruby
+            >を触れられる形へと変え、
+            <strong>毎日がちょっと楽しみになる世界</strong>を広げていきます。
+        </p>
+    </section>
+
+    <section id="works-services" class="min-h-screen flex flex-col">
+        <div
+            id="works"
+            class="reveal flex-1 flex flex-col justify-center px-6 md:px-24 lg:px-36"
+        >
+            <h2 class="mb-8 text-5xl sm:text-6xl font-extrabold tracking-tight">
+                <span
+                    class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                    >Works</span
+                >
+            </h2>
+
+
+            <div
+                class="w-full rounded-2xl border border-dashed border-gray-300 dark:border-gray-600
+                    p-10 text-center text-gray-500 dark:text-gray-400"
+            >
+                Coming&nbsp;Soon
+            </div>
+
+            <!-- <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                <article
+                    class="group relative rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl shadow-gray-200/40 ring-1 ring-gray-200/60 transition-transform hover:-translate-y-1 hover:shadow-yellow-400/30"
+                >
+                    <img
+                        src="/placeholder/work1.jpg"
+                        alt="Work 1"
+                        class="h-52 w-full rounded-t-3xl object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div class="p-6">
+                        <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                            Project Title
+                        </h3>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Brief description of the project. Highlights or tech
+                            used.
+                        </p>
+                    </div>
+                </article>
+
+                <article
+                    class="group relative rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl shadow-gray-200/40 ring-1 ring-gray-200/60 transition-transform hover:-translate-y-1 hover:shadow-yellow-400/30"
+                >
+                    <img
+                        src="/placeholder/work2.jpg"
+                        alt="Work 2"
+                        class="h-52 w-full rounded-t-3xl object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div class="p-6">
+                        <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                            Project Title
+                        </h3>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Brief description of the project. Highlights or tech
+                            used.
+                        </p>
+                    </div>
+                </article>
+
+                <article
+                    class="group relative rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl shadow-gray-200/40 ring-1 ring-gray-200/60 transition-transform hover:-translate-y-1 hover:shadow-yellow-400/30"
+                >
+                    <img
+                        src="/placeholder/work3.jpg"
+                        alt="Work 3"
+                        class="h-52 w-full rounded-t-3xl object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div class="p-6">
+                        <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                            Project Title
+                        </h3>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Brief description of the project. Highlights or tech
+                            used.
+                        </p>
+                    </div>
+                </article>
+            </div> -->
+        </div>
+
+        <div
+            id="services"
+            class="reveal flex-1 flex flex-col justify-center px-6 md:px-24 lg:px-36"
+        >
+            <h2 class="mb-8 text-5xl sm:text-6xl font-extrabold tracking-tight">
+                <span
+                    class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                    >Services</span
+                >
+            </h2>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                <div
+                    class="rounded-3xl border border-gray-200/70 bg-white/60 p-8 shadow-xl shadow-gray-200/40 backdrop-blur-lg transition hover:-translate-y-1 hover:shadow-yellow-400/20"
+                >
+                    <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                        Web Developments
+                    </h3>
+                    <p class="text-gray-700">
+                        デザインから実装・SEO 対策まで一気通貫。<br>
+                        高速表示と運用しやすさを両立したウェブサイトを構築します。
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-3xl border border-gray-200/70 bg-white/60 p-8 shadow-xl shadow-gray-200/40 backdrop-blur-lg transition hover:-translate-y-1 hover:shadow-yellow-400/20"
+                >
+                    <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                        App Development
+                    </h3>
+                    <p class="text-gray-700">
+                        iOS / Android / デスクトップをワンソースで。<br>
+                        Flutter・React Native を駆使し、UI/UX にこだわった<br>
+                        ネイティブ体験を提供します。
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-3xl border border-gray-200/70 bg-white/60 p-8 shadow-xl shadow-gray-200/40 backdrop-blur-lg transition hover:-translate-y-1 hover:shadow-yellow-400/20"
+                >
+                    <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                        Workflow Automation
+                    </h3>
+                    <p class="text-gray-700">
+                        面倒な手作業をコードで自動化。<br>
+                        Bot・API 連携・CLI ツールで業務を省力化し、<br>
+                        クリエイティブに集中できる環境を作ります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news-contact" class="min-h-screen flex flex-col">
+        <div
+            id="news"
+            class="reveal flex-1 flex flex-col justify-center px-6 md:px-24 lg:px-36"
+        >
+            <h2 class="mb-8 text-5xl sm:text-6xl font-extrabold tracking-tight">
+                <span
+                    class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                    >News</span
+                >
+            </h2>
+            
+            <div
+                class="w-full rounded-2xl border border-dashed border-gray-300 dark:border-gray-600
+                    p-10 text-center text-gray-500 dark:text-gray-400"
+            >
+                Coming&nbsp;Soon
+            </div>
+
+            <!-- <div class="space-y-8">
+                <article
+                    class="relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#f6e05e] before:via-[#b2e672] before:to-[#f9b26b]"
+                >
+                    <time class="text-xs font-semibold uppercase text-gray-500"
+                        >2025-06-01</time
+                    >
+                    <h3 class="mt-2 text-xl font-semibold text-gray-800">
+                        Portfolio site launched
+                    </h3>
+                    <p class="mt-1 text-gray-600">
+                        Our official portfolio website is now live with updated
+                        works and services.
+                    </p>
+                </article>
+
+                <article
+                    class="relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#f6e05e] before:via-[#b2e672] before:to-[#f9b26b]"
+                >
+                    <time class="text-xs font-semibold uppercase text-gray-500"
+                        >2025-05-20</time
+                    >
+                    <h3 class="mt-2 text-xl font-semibold text-gray-800">
+                        First prototype demo released
+                    </h3>
+                    <p class="mt-1 text-gray-600">
+                        We released a demo version of our upcoming virtual
+                        showcase platform.
+                    </p>
+                </article>
+
+                <article
+                    class="relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#f6e05e] before:via-[#b2e672] before:to-[#f9b26b]"
+                >
+                    <time class="text-xs font-semibold uppercase text-gray-500"
+                        >2025-05-01</time
+                    >
+                    <h3 class="mt-2 text-xl font-semibold text-gray-800">
+                        Yuzunix Works officially starts
+                    </h3>
+                    <p class="mt-1 text-gray-600">
+                        Our studio is now operational, focusing on creative
+                        virtual-world development.
+                    </p>
+                </article>
+            </div> -->
+        </div>
+
+        <div
+            id="contact"
+            class="reveal flex-1 flex flex-col justify-center px-6 md:px-24 lg:px-36"
+        >
+            <h2 class="mb-8 text-5xl sm:text-6xl font-extrabold tracking-tight">
+                <span
+                    class="bg-gradient-to-r from-[#f6e05e] via-[#b2e672] to-[#f9b26b] bg-clip-text text-transparent"
+                    >Contact</span
+                >
+            </h2>
+
+            <div class="space-y-2 text-lg md:text-xl text-gray-700">
+                <p>
+                    📩
+                    <a
+                        class="underline decoration-yellow-400/60 hover:text-gray-900"
+                        href="mailto:yuzunix@example.com">contact@yuzunix.dev</a
+                    >
+                </p>
+                <p>
+                    🌐
+                    <a
+                        class="underline decoration-yellow-400/60 hover:text-gray-900"
+                        href="https://github.com/yuzunix">GitHub</a
+                    >
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script is:inline>
+        const jp = "創造と技術で、未来をかたちにする。";
+        const en = "Shaping the future through creativity and technology.";
+        const target = document.getElementById("slogan-text");
+        let isEnglish = false,
+            index = 0,
+            text = jp,
+            typing = true;
+
+        function typeWriter() {
+            if (!target) return;
+            if (typing) {
+                if (index <= text.length) {
+                    target.textContent = text.slice(0, index++);
+                    setTimeout(typeWriter, 60);
+                } else {
+                    typing = false;
+                    setTimeout(typeWriter, 2000);
+                }
+            } else {
+                if (index >= 0) {
+                    target.textContent = text.slice(0, index--);
+                    setTimeout(typeWriter, 40);
+                } else {
+                    setTimeout(() => {
+                        typing = true;
+                        isEnglish = !isEnglish;
+                        text = isEnglish ? en : jp;
+                        index = 0;
+                        typeWriter();
+                    }, 150);
+                }
+            }
+        }
+
+        function initStarfield() {
+            const canvas = document.getElementById("starfield");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let stars = [];
+            const STAR_COUNT = 120;
+            const BASE_SPEED = 0.15;
+            const STAR_SIZE = [0.3, 1.4];
+
+            function resize() {
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = innerWidth * dpr;
+                canvas.height = innerHeight * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                stars = Array.from({ length: STAR_COUNT }, () => ({
+                    x: Math.random() * innerWidth,
+                    y: Math.random() * innerHeight,
+                    r:
+                        Math.random() * (STAR_SIZE[1] - STAR_SIZE[0]) +
+                        STAR_SIZE[0],
+                    s: Math.random() * 0.6 + 0.2,
+                }));
+            }
+
+            function render() {
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+                ctx.fillStyle = "rgba(255,255,255,.9)";
+                stars.forEach((star) => {
+                    ctx.globalAlpha = star.s;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    star.y += star.s + BASE_SPEED;
+                    if (star.y > innerHeight) star.y = 0;
+                });
+                requestAnimationFrame(render);
+            }
+
+            resize();
+            render();
+            window.addEventListener("resize", resize);
+        }
+
+        function initReveal() {
+            const sections = document.querySelectorAll(".reveal");
+            const io = new IntersectionObserver(
+                (entries) =>
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add("show");
+                            io.unobserve(e.target);
+                        }
+                    }),
+                { threshold: 0.15 },
+            );
+            sections.forEach((s) => io.observe(s));
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            typeWriter();
+            initStarfield();
+            initReveal();
+        });
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .blinker {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            margin-left: 4px;
+            background-color: #444;
+            animation: blink 1s step-start infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
 </Layout>
